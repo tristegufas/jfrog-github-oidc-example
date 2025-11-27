@@ -1,7 +1,5 @@
 name: "JFrog-GitHub NPM Publish OIDC Integration"
 on: 
-  push
-
   workflow_dispatch:
 
 
