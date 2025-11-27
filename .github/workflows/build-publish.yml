@@ -10,9 +10,8 @@ jobs:
   build:
      runs-on: ubuntu-latest
      env:
-      OIDC_AUDIENCE: 'jfrog-github'
-      OIDC_PROVIDER: 'github'
-      PLATFORM_REPO: 'eks-npm'
+      OIDC_PROVIDER: 'setup-jfrog-cli'
+      PLATFORM_REPO: 'npm'
      defaults:
       run:
         working-directory: ./package
@@ -29,7 +28,6 @@ jobs:
            JF_URL: ${{ secrets.JF_URL }}
          with:
            oidc-provider-name: ${{ env.OIDC_PROVIDER }}
-           oidc-audience: ${{ env.OIDC_AUDIENCE }}
 
        - name: Set CLI Config
          run: jf npm-config --global=true --repo-resolve=$PLATFORM_REPO --repo-deploy=$PLATFORM_REPO
