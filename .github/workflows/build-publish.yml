@@ -30,7 +30,7 @@ jobs:
            JF_URL: ${{ secrets.JF_URL }}
          with:
            oidc-provider-name: ${{ env.OIDC_PROVIDER }}
-           odic-audience: jfrog-github
+           oidc-audience: jfrog-github
 
        - name: Set CLI Config
          run: jf npm-config --global=true --repo-resolve=$PLATFORM_REPO --repo-deploy=$PLATFORM_REPO
